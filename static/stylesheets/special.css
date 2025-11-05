@@ -87,6 +87,5 @@ h3 {
 
 /* 大屏下：扩大容器宽度 → 间距 = 容器宽度 - 正文宽度 */
 @media (min-width: 961px) {
-  .wrapper { width: 900px !important; }  /* 默认 800px，可调 860~960 */
-  /* 可选：保持正文 600px，不改即可 */
+  .wrapper { width: 900px !important; }  
 }
