@@ -26,27 +26,10 @@
 <section class="section">
   <h1>Publications</h1>
   
-  <div class="filters">
-    <a class="chip chip-active" href="/publications">全部</a>
-    
-      <a class="chip " href="/publications?year=2024">2024</a>
-    
-  </div>
-  
 
   <ul class="pub-list">
     
-    <li class="pub-item">
-      <div class="pub-title">深度学习在计算机视觉中的应用研究</div>
-      <div class="pub-meta">张三, 李四 · IEEE Transactions on Pattern Analysis and Machine Intelligence · 2024</div>
-      <div class="pub-actions">
-        <a class="link" href="https://doi.org/10.1109/TPAMI.2024.xxxxx" target="_blank" rel="noopener">DOI</a>
-        <a class="link" href="#" onclick="toggleAbstract(1);return false;">摘要</a>
-      </div>
-      
-      <div id="abs-1" class="abstract" style="display:none;">本文研究了深度学习在计算机视觉领域的最新应用...</div>
-      
-    </li>
+    <li>暂无数据。</li>
     
   </ul>
   
