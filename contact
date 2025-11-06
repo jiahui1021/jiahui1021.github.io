@@ -78,6 +78,8 @@
     <script src="/static/javascripts/scale.fix.js"></script>
     <script src="/static/js/dark-mode.js"></script>
     <script src="/static/js/search.js"></script>
+    <!-- Plausible Analytics -->
+    <script defer data-domain="llenice.github.io" src="https://plausible.io/js/script.js"></script>
     
   </body>
 </html>

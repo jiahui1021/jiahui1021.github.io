@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hu Jiahui</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Plausible Analytics -->
+    <script defer data-domain="llenice.github.io" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
     <header class="site-header">
