@@ -14,11 +14,6 @@
         width: 60%;
       }
 
-/* 确保不被其他样式覆盖（如历史缓存或更高优先级规则） */
-.wrapper .image.avatar, .wrapper .image.avatar img {
-  border-radius: 0 !important;
-}
-
 h1 {
   font-family: "lucida grande", "lucida sans unicode", lucida, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -92,5 +87,6 @@ h3 {
 
 /* 大屏下：扩大容器宽度 → 间距 = 容器宽度 - 正文宽度 */
 @media (min-width: 961px) {
-  .wrapper { width: 900px !important; }  
+  .wrapper { width: 900px !important; }  /* 默认 800px，可调 860~960 */
+  /* 可选：保持正文 600px，不改即可 */
 }

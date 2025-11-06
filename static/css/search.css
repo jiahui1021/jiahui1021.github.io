@@ -1,0 +1,72 @@
+/* 搜索框样式 */
+#search-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search-result {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result:hover {
+  background: #f5f5f5;
+}
+
+.search-result-type {
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.search-result-title {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.search-result-preview {
+  font-size: 12px;
+  color: #777;
+}
+
+.search-no-results {
+  padding: 10px;
+  text-align: center;
+  color: #777;
+}
+
+@media (max-width: 960px) {
+  #search-container {
+    position: static;
+    margin: 10px 0;
+  }
+}
+

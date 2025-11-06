@@ -1,27 +1,57 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hu Jiahui</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta name="keywords" content="Hu Jiahui, Computer Science, Research, Publications">
+    <meta name="author" content="Hu Jiahui">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://llenice.github.io/">
+    <meta property="og:title" content="Hu Jiahui">
+    <meta property="og:description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta property="og:image" content="https://llenice.github.io/static/images/profile.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://llenice.github.io/">
+    <meta property="twitter:title" content="Hu Jiahui">
+    <meta property="twitter:description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta property="twitter:image" content="https://llenice.github.io/static/images/profile.jpg">
 
-    <link rel="icon" type="image/png" href="static/images/mit.ico">
+    <link rel="icon" type="image/png" href="/static/images/mit.ico">
     <!-- 使用 CDN 避免本地拷贝二进制字体/Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="static/stylesheets/styles.css?v=2">
-    <link rel="stylesheet" href="static/stylesheets/special.css?v=2">
+    <link rel="stylesheet" href="/static/stylesheets/styles.css">
+    <link rel="stylesheet" href="/static/stylesheets/special.css">
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/dark-mode.css">
   </head>
   <body>
+    <!-- 主题切换按钮 -->
+    <button id="theme-toggle" aria-label="切换主题">🌙</button>
+    
+    <!-- 搜索框（可选） -->
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Search...">
+      <div id="search-results"></div>
+    </div>
+    
     <div class="wrapper">
       
   <header>
     <br />
     <div align="left">
       <span class="image avatar">
-        <img src="static/images/profile.jpg" alt="avatar">
+        <img src="static/images/profile.jpg" alt="avatar" loading="lazy">
       </span>
     </div>
     <span><h1><b>Hu Jiahui</b></h1></span>
@@ -48,6 +78,25 @@
       <p><i>* indicates equal contribution</i></p>
       <br>
       
+      <section class="pub">
+        <table width="100%" align="center" border="0">
+          <tr>
+            <td width="25%" valign="top">
+              <a class="image"><img src="/static/images/placeholder.png" width="93%" alt=""></a>
+            </td>
+            <td width="75%" align="center">
+              <div class="title">深度学习在计算机视觉中的应用研究</div>
+              <div class="authors">张三, 李四</div>
+              <div>
+                <span class="tag"><b>IEEE Transactions on Pattern Analysis and Machine Intelligence</b></span> /
+                <span class="tag">2024</span>
+                / <span class="tag"><a href="https://doi.org/10.1109/TPAMI.2024.xxxxx" target="_blank">DOI</a></span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </section>
+      
     </section>
 
     <section id="awards">
@@ -61,7 +110,7 @@
         </li>
         
         <li>
-          <strong>2025 ICM/MCM Meritorious Winner </strong>
+          <strong>2025 ICM/MCM Meritorious Winner</strong>
           <span class="muted"> · ICM/MCM · 2025</span>
           
         </li>
@@ -73,9 +122,7 @@
       <h2>Hobbies</h2>
       <ul>
         
-        <li>Strength Training🏋️<br>
-          My PRs for the three major lifts are: bench press 70kg, squat 110kg, and deadlift 120kg.
-        </li>
+        <li>Strength Training🏋️</li>
         
         <li>Basketball🏀</li>
         
@@ -92,7 +139,9 @@
         </ul>
       </div>
     </section>
-    <script src="static/javascripts/scale.fix.js"></script>
+    <script src="/static/javascripts/scale.fix.js"></script>
+    <script src="/static/js/dark-mode.js"></script>
+    <script src="/static/js/search.js"></script>
     
   </body>
 </html>
