@@ -25,13 +25,13 @@
         
 <section class="section">
   <h1>About Me</h1>
-  <p>I’m a sophomore undergraduate student from South China University of Technology. Double major in Computer Science & Finance.
+  <p>I’m a sophomore undergraduate student from South China University of Technology. Double major in Computer Science & Finance.<br>
 
     Please feel free to contact me 👋</p>
 
   <ul class="list">
     <li></li>
-    <li>email: hujiahui1021@gmail.com</li>
+    <li>email: hujiahui1021 AT gmail.com</li>
     <li>学术主页：<a class="link" href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a></li>
   </ul>
   <div class="section-actions">

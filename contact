@@ -7,7 +7,7 @@
     <title>联系方式 - Hu Jiahui</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta name="description" content="Hu Jiahui's academic homepage">
     <meta name="keywords" content="Hu Jiahui, Computer Science, Research, Publications">
     <meta name="author" content="Hu Jiahui">
     
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://llenice.github.io/">
     <meta property="og:title" content="Hu Jiahui">
-    <meta property="og:description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta property="og:description" content="Hu Jiahui&#39;s academic homepage">
     <meta property="og:image" content="https://llenice.github.io/static/images/profile.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://llenice.github.io/">
     <meta property="twitter:title" content="Hu Jiahui">
-    <meta property="twitter:description" content="Hu Jiahui's academic homepage - Research in Computer Science">
+    <meta property="twitter:description" content="Hu Jiahui&#39;s academic homepage">
     <meta property="twitter:image" content="https://llenice.github.io/static/images/profile.jpg">
 
     <link rel="icon" type="image/png" href="/static/images/mit.ico">
