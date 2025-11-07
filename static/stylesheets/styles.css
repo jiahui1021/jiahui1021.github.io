@@ -155,7 +155,6 @@ header ul a:active {
 }
 
 strong {
-  color:#222;
   font-weight:700;
 }
 
@@ -349,50 +348,6 @@ section.pub {
   box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* optional soft depth */
 /*  font-size: 14px;*/
   line-height: 1.5;
-}
-
-.social-links a {
-  color: #222; /* 设置图标颜色 */
-  text-decoration: none;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.social-links a:hover {
-  opacity: 0.7; /* 鼠标悬停时变淡 */
-}
-
-.pub-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  gap: 1.5rem; /* 图像和文字之间的间距 */
-}
-
-.pub-image {
-  flex: 0 0 150px; /* 固定宽度，不伸缩 */
-}
-
-.pub-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.pub-details {
-  flex: 1; /* 占据剩余空间 */
-}
-
-/* 在小屏幕上，让它们垂直堆叠 */
-@media (max-width: 768px) {
-  .pub-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .pub-image {
-    flex-basis: auto; /* 恢复自动高度 */
-    width: 100%;
-    max-width: 300px; /* 限制最大宽度 */
-  }
 }
 
 
