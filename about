@@ -38,6 +38,7 @@
   </ul>
   <div class="section-actions">
     <a class="btn" href="#" onclick="alert('请将简历PDF放到 static/ 目录并更新链接');return false;">下载简历（CV）</a>
+    <a class="btn" href="/static/files/JiahuiHU_cv.pdf" target="_blank">下载简历（CV）</a>
   </div>
   
 </section>
