@@ -2,173 +2,165 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jiahui HU</title>
+    <title>Hu Jiahui | Portfolio</title>
+    <meta name="description" content="Hu Jiahui's academic homepage">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Jiahui HU's academic homepage">
-    <meta name="keywords" content="Jiahui HU, Computer Science, Research, Publications">
-    <meta name="author" content="Jiahui HU">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://llenice.github.io/">
-    <meta property="og:title" content="Jiahui HU">
-    <meta property="og:description" content="Jiahui HU's academic homepage">
-    <meta property="og:image" content="https://llenice.github.io/static/images/profile.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://llenice.github.io/">
-    <meta property="twitter:title" content="Hu Jiahui">
-    <meta property="twitter:description" content="Hu Jiahui&#39;s academic homepage">
-    <meta property="twitter:image" content="https://llenice.github.io/static/images/profile.jpg">
-
-    <link rel="icon" type="image/png" href="/static/images/mit.ico">
-    <!-- 使用 CDN 避免本地拷贝二进制字体/Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/static/stylesheets/styles.css">
-    <link rel="stylesheet" href="/static/stylesheets/special.css">
-    <link rel="stylesheet" href="/static/css/search.css">
-    <link rel="stylesheet" href="/static/css/dark-mode.css">
-
-    <style>
-      /* 针对主页微调的内联样式 */
-      .news-list { margin-top: 10px; padding-left: 20px; }
-      .news-list li { margin-bottom: 6px; font-size: 14px; color: #555; }
-      .project-item { margin-bottom: 20px; }
-      .project-title { font-weight: bold; font-size: 16px; color: #333; }
-      .project-tech { font-size: 12px; color: #0055AA; background: #eef6ff; padding: 2px 6px; border-radius: 4px; margin-left: 8px; }
-      /* 暗色模式适配 */
-      [data-theme="dark"] .news-list li { color: #aaa; }
-      [data-theme="dark"] .project-title { color: #eee; }
-      [data-theme="dark"] .project-tech { background: #1a3a5a; color: #8ecfff; }
-    </style>
-
+    <link rel="stylesheet" href="/static/css/style.css">
   </head>
+  
   <body>
-    <!-- 主题切换按钮 -->
-    <button id="theme-toggle" aria-label="切换主题">🌙</button>
+    <div class="bg-gradient"></div>
+
+    <button id="theme-toggle" class="spring-btn" aria-label="切换主题">
+      <span class="icon">🌙</span>
+    </button>
     
-    <!-- 搜索框（可选） -->
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Search...">
-      <div id="search-results"></div>
-    </div>
-    
-    <div class="wrapper">
+    <div class="layout-wrapper">
       
-  <header>
-    <br />
-    <div align="left">
-      <span class="image avatar">
-        <img src="static/images/profile.jpg" alt="avatar" loading="lazy">
-      </span>
-    </div>
-    <span><h1><b>Hu Jiahui</b></h1></span>
-    <p class="social-links">
-      <a href="https://www.linkedin.com//in/jiahui-hu-931522375/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>&nbsp
-      <a href="https://github.com/llenice " target="_blank"><i class="fa fa-github fa-2x"></i></a>&nbsp
-      <a href="https://scholar.google.com/" target="_blank"><i class="fa fa-graduation-cap fa-2x"></i></a>
-      <a href="mailto:hujiahui1021@gmail.com" title="Email Me"><i class="fa fa-envelope fa-2x"></i></a>
-    </p>
-    <br />
-    <h4>Contact:</h4>
-    <p><a href="mailto:hujiahui1021@gmail.com">hujiahui1021 [at] gmail.com</a></p>
-    
-    <br>
-    <a href="/static/files/JiahuiHU_cv.pdf" target="_blank" class="btn" style="padding: 6px 12px; font-size: 12px;">📄 Download CV</a>
-  </header>
+      <aside class="sidebar animate-in" style="--delay: 0.1s">
+        <div class="profile-card glass-card">
+          <div class="avatar-container">
+            <img src="static/images/profile.jpg" alt="Hu Jiahui" class="avatar">
+            <div class="status-badge" title="Open to work">👋</div>
+          </div>
+          
+          <h1 class="name">Hu Jiahui</h1>
+          <!-- <p class="bio">CS & Finance Student @ SCUT</p> -->
+          
+          <div class="social-links">
+            <a href="https://github.com/llenice" target="_blank" class="social-btn spring-btn" title="GitHub">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jiahui-hu-931522375/" target="_blank" class="social-btn spring-btn" title="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="mailto:hujiahui1021@gmail.com" class="social-btn spring-btn" title="Email">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </div>
 
-  <section class="outer">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I'm a sophomore undergraduate student at <a href="https://www.scut.edu.cn/" target="_blank">South China University of Technology (SCUT)</a>. I am pursuing a Double Major in <strong>Computer Science</strong> and <strong>Finance</strong>.</p>
-
-
-        Please feel free to contact me 👋</p>
-    </section>
-
-    <section id="research">
-      <h2>Publications 
-        <span style="float:right;">
-          <a href="https://scholar.google.com/" class="view-all-link">[Full List]</a>
-        </span>
-      </h2>
-      
-      <!-- -->
-      
-        <div class="callout">
-          <span style="margin-right: 8px;">📝</span>
-          <span>Currently working on exciting research projects. Publications coming soon!</span>
+          <div class="contact-mini">
+             <a href="mailto:hujiahui1021@gmail.com" class="email-link">hujiahui1021 [at] gmail.com</a>
+          </div>
+          
+          <a href="/static/files/JiahuiHU_cv.pdf" target="_blank" class="download-btn spring-btn">
+            <span>Download CV</span>
+            <i class="fa fa-arrow-down"></i>
+          </a>
         </div>
-      
-    </section>
+      </aside>
 
-    <section id="awards">
-      <h2>Awards</h2>
-      <ul>
+      <main class="main-content">
         
-        <li>
-          <strong>SCUT First-class Scholarship(Top 10%)</strong>
-          <span class="muted"> · SCUT · 2025</span>
+        <section id="about" class="content-card glass-card animate-in" style="--delay: 0.2s">
+          <h2 class="section-title">About Me</h2>
+          <div class="text-content">
+            <p>
+              Hi there! I'm a sophomore undergraduate student at <strong class="highlight">South China University of Technology</strong>, doubling majoring in <strong>Computer Science</strong> and <strong>Finance</strong>.
+            </p>
+            <p>
+
+            </p>
+          </div>
           
-        </li>
+          <div class="news-box">
+            <div class="news-header">🔥 Latest Updates</div>
+            <ul class="news-list">
+              <!-- <li>
+                <span class="date">May. 2025</span>
+                <span class="desc">Won <strong>Meritorious Winner</strong> (Top ~7%) in MCM/ICM 2025.</span>
+              </li>
+              <li>
+                <span class="date">Oct. 2025</span>
+                <span class="desc">Awarded SCUT First-class Scholarship.</span>
+              </li> -->
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" class="content-card glass-card animate-in" style="--delay: 0.3s">
+          <div class="section-header">
+            <h2 class="section-title">Selected Projects</h2>
+            <a href="/projects" class="view-all">View All <i class="fa fa-angle-right"></i></a>
+          </div>
+
+          <div class="project-grid">
+            <!-- <div class="project-item spring-hover">
+              <div class="project-icon">📈</div>
+              <div class="project-info">
+                <h3>Quant Trading Backtester</h3>
+                <p>A Python-based event-driven backtesting framework for multi-factor strategies.</p>
+                <div class="tags">
+                  <span>Python</span><span>Pandas</span><span>Finance</span>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- <div class="project-item spring-hover">
+              <div class="project-icon">🤖</div>
+              <div class="project-info">
+                <h3>Financial Sentiment NLP</h3>
+                <p>Fine-tuned BERT model to analyze market sentiment from financial news headlines.</p>
+                <div class="tags">
+                  <span>PyTorch</span><span>NLP</span><span>BERT</span>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+
+        <section id="awards" class="content-card glass-card animate-in" style="--delay: 0.4s">
+          <h2 class="section-title">Honors & Awards</h2>
+          <ul class="awards-list">
+            <li class="spring-hover">
+              <div class="award-icon">🏆</div>
+              <div class="award-details">
+                <strong>Meritorious Winner (Top ~7%)</strong>
+                <span class="sub">MCM/ICM Modeling Contest · 2025</span>
+              </div>
+            </li>
+            <li class="spring-hover">
+              <div class="award-icon">🥇</div>
+              <div class="award-details">
+                <strong>First-class Scholarship</strong>
+                <span class="sub">South China University of Technology · 2025</span>
+              </div>
+            </li>
+
+            <li class="spring-hover">
+              <div class="award-icon">🥈</div>
+              <div class="award-details">
+                <strong>Second Prize</strong>
+                <span class="sub">The Chinese Mathematics Competitions · 2025</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <section id="misc" class="content-card glass-card animate-in" style="--delay: 0.5s">
+          <h2 class="section-title">misc</h2>
+          <div class="hobbies-grid">
+            <div class="hobby-tag spring-hover">🏋️ Strength Training (S:110 B:70 D:120)</div>
+            <div class="hobby-tag spring-hover">🏀 Basketball</div>
+            <div class="hobby-tag spring-hover">📷 Photography</div>
+          </div>
+        </section>
         
-        <li>
-          <strong>2025 ICM/MCM Meritorious Winner</strong>
-          <span class="muted"> · ICM/MCM · 2025</span>
-          
-        </li>
-        <li>
-          <strong>The Chinese Mathematics Competitions - Second Prize</strong>
-          <span class="muted"> · CMC · 2025</span>
-        </li>  
-      </ul>
-    </section>
+        <footer class="site-footer animate-in" style="--delay: 0.6s">
+          <p>© 2025 Hu Jiahui. </p>
+        </footer>
 
-
-    <section id="misc">
-      <h2>misc</h2>
-      <ul>
-        In my free time, I enjoy:
-        <li>Strength Training🏋️ <br>
-          My PRs(5reps) for the big 3: bench press 70kg, squat 110kg, and deadlift 120kg.</li>
-        
-        <li>Basketball🏀</li>
-
-        <li>Photography📷</li>
-        
-      </ul>
-    </section>
-
-    <br> </br>
-    
-    <section id="visitor-section">
-      <div id="visitor-map">
-        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=J_ZtUA9Aje3l3SSFwB8fUV4WTBsxwqxUzKOkUDRws80&cl=ffffff&w=a"></script>
-      </div>
-    </section>
-
-  </section>
-
+      </main>
     </div>
-    <section id="footer">
-      <div class="container">
-        <ul class="copyright">
-          <li>&copy; 2025</li>
-        </ul>
-      </div>
-    </section>
-    <script src="/static/javascripts/scale.fix.js"></script>
-    <script src="/static/js/dark-mode.js"></script>
-    <script src="/static/js/search.js"></script>
-    <!-- Plausible Analytics -->
-    <script defer data-domain="llenice.github.io" src="https://plausible.io/js/script.js"></script>
-    
-  </body>
-</html>
 
+    <script src="/static/js/dark-mode.js"></script>
+    <script src="/static/js/main.js"></script> </body>
+</html>
