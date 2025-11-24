@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="zh-CN">
   <head>
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="/static/css/style.css">
   </head>
   
-  <body>
     <body class="gallery-page">
     <button id="theme-toggle" aria-label="切换主题">
       <span class="icon">🌙</span>
@@ -25,8 +23,7 @@
     
     <div class="layout-wrapper">
       
-      <main class="gallery-container animate-in" style="--delay: 0.2s">
-        
+      <main class="gallery-container animate-in" style="--delay: 0.2s">     
         <div class="photo-card" style="background: var(--card-bg); width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
           <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Through<br>My Lens</h1>
           <p style="color: var(--text-secondary); margin-bottom: 20px;">
@@ -36,9 +33,25 @@
             <i class="fa fa-camera"></i> Sony A7C2
           </div>
         </div>
+        
+        <div class="photo-card">
+          <img src="/static/images/gallery/DHcat.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>cat in DH</h3>
+            <p style="font-size: 12px; opacity: 0.8;">April 2024 · 50mm</p>
+          </div>
+        </div>
 
         <div class="photo-card">
           <img src="/static/images/gallery/Mt.Yulong.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>Mt.Jade Dragon, Yunnan </h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="/static/images/gallery/MtYL2.jpg" alt="Description" loading="lazy">
           <div class="photo-info">
             <h3>Mt.Jade Dragon, Yunnan </h3>
             <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
@@ -54,6 +67,38 @@
         </div>
 
         <div class="photo-card">
+          <img src="/static/images/gallery/sea2.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>Sea in Qingdao</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="/static/images/gallery/sea.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>Huang Sea</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="/static/images/gallery/RedMoon.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>海上明月共潮生</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 200mm</p>
+          </div>
+        </div>   
+        
+        <div class="photo-card">
+          <img src="/static/images/gallery/zsl.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>Sun Yat-sen Mausoleum, Nanjing</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
           <img src="/static/images/gallery/Nanjing.jpg" alt="Description" loading="lazy">
           <div class="photo-info">
             <h3>Sun Yat-sen Mausoleum, Nanjing</h3>
@@ -61,7 +106,29 @@
           </div>
         </div>
 
+        <div class="photo-card">
+          <img src="/static/images/gallery/jng.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>The Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
+          </div>
+        </div>
 
+        <div class="photo-card">
+          <img src="/static/images/gallery/scut_ws.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>SCUT Campus </h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 130mm</p>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="/static/images/gallery/cat_scut.jpg" alt="Description" loading="lazy">
+          <div class="photo-info">
+            <h3>cat in SCUT</h3>
+            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 80mm</p>
+          </div>
+        </div>
         
 
 
@@ -71,7 +138,7 @@
 
     <script src="/static/js/dark-mode.js"></script>
     <script>
-      // 启用鼠标滚轮横向滚动（为没有触摸板的 PC 用户优化体验）
+      // 启用鼠标滚轮横向滚动
       const container = document.querySelector('.gallery-container');
       container.addEventListener('wheel', (evt) => {
         if (evt.deltaY !== 0) { // 如果是垂直滚动
@@ -79,6 +146,7 @@
           container.scrollLeft += evt.deltaY;
         }
       });
+
     </script>
   </body>
 </html>
