@@ -293,51 +293,109 @@ body.gallery-page #theme-toggle {
   transform: translateY(0);
 }
 
-/* 移动端画廊适配 */
-@media (max-width: 768px) {
-  .gallery-container {
-    gap: 20px;
-    padding: 0 20px;
-  }
-  .photo-card {
-    height: 60vh;
-    width: 90vw;
-    border-radius: 12px;
-  }
-  .photo-card img {
-    object-fit: cover; 
-    width: 100%;
-  }
-  .photo-info {
-    opacity: 1;
-    transform: translateY(0);
-    padding: 15px;
-  }
-  /* 画廊页移动端导航调整 */
-  body.gallery-page .nav-header { 
-    top: auto; bottom: 20px; 
-    right: 50%; transform: translateX(50%); 
-    width: max-content; 
-  }
-}
-
 /* =========================================
-   7. Animations & Footer
+   Mobile Optimization (移动端深度优化)
    ========================================= */
-.spring-btn, .spring-hover { transition: transform var(--spring-duration) var(--spring-easing), background-color 0.2s, box-shadow 0.2s; }
-.spring-btn:hover { transform: scale(1.1); }
-.spring-btn:active { transform: scale(0.95); }
+@media (max-width: 768px) {
+  
+  /* 1. 布局容器：利用全屏高度 */
+  .layout-wrapper {
+    padding: 0; /* 移除外边距，最大化视野 */
+    height: 100vh;
+    height: 100dvh; /* 适配移动端动态地址栏高度 */
+  }
 
-@keyframes slideUpFade { 
-  0% { opacity: 0; transform: translateY(40px) scale(0.95); } 
-  100% { opacity: 1; transform: translateY(0) scale(1); } 
+  /* 2. 画廊容器：调整间距和滚动体验 */
+  .gallery-container {
+    gap: 16px; /* 减小卡片间距 */
+    padding: 0 24px; /* 左右留出一点预览空间，提示用户可以滑动 */
+    scroll-padding: 0 24px; /* 配合 scroll-snap 使用 */
+  }
+
+  /* 3. 照片卡片：更大、更沉浸 */
+  .photo-card {
+    width: 90vw;  /* 宽度几乎占满屏幕 */
+    height: 82vh; /* 高度大幅增加，充分利用长屏幕 */
+    border-radius: 12px;
+    background: #000; /* 纯黑背景，类似相册看法 */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    margin-top: 20px; /* 稍微避开顶部的导航栏 */
+  }
+
+  /* 4. 图片：绝不裁剪 (关键修改) */
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 改为 contain：保证无论横图竖图都能完整显示 */
+    background: #000;    /* 图片留白处填充黑色 */
+  }
+
+  /* 5. 信息遮罩：常驻显示但更精致 */
+  .photo-info {
+    opacity: 1; /* 移动端无法悬停，必须常驻显示 */
+    transform: translateY(0);
+    padding: 12px 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+    backdrop-filter: none; /* 移除毛玻璃以提升性能 */
+  }
+  
+  .photo-info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  }
+  
+  .photo-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* 6. 导航栏优化：固定在右上角，不挡图片 */
+  body.gallery-page .nav-header {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: auto;
+    z-index: 1000;
+  }
+  
+  /* 导航药丸条：更紧凑 */
+  .nav-links {
+    padding: 6px 16px;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+  }
+
+  /* 暗色模式下的导航条 */
+  [data-theme="dark"] .nav-links {
+    background: rgba(30, 30, 30, 0.85);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-link { font-size: 13px; }
+
+  /* 7. 主题按钮：固定左上角，缩小尺寸 */
+  body.gallery-page #theme-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 36px; 
+    height: 36px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: none;
+    z-index: 1000;
+  }
+  
+  [data-theme="dark"] body.gallery-page #theme-toggle {
+    background: rgba(30, 30, 30, 0.85);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
 }
-.animate-in { opacity: 0; animation: slideUpFade 0.8s var(--spring-easing) forwards; animation-delay: var(--delay, 0s); }
-
-@keyframes wave { 
-  0%, 100% { transform: rotate(0deg); } 
-  25% { transform: rotate(15deg); } 
-  75% { transform: rotate(-10deg); } 
-}
-
-.site-footer { text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 40px; }
