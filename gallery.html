@@ -146,10 +146,9 @@
 
     <script src="/static/js/dark-mode.js"></script>
     <script>
-      // 启用鼠标滚轮横向滚动
       const container = document.querySelector('.gallery-container');
       container.addEventListener('wheel', (evt) => {
-        if (evt.deltaY !== 0) { // 如果是垂直滚动
+        if (evt.deltaY !== 0) { 
           evt.preventDefault();
           container.scrollLeft += evt.deltaY;
         }
