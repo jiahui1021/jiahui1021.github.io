@@ -11,6 +11,8 @@
 }
 
 :root {
+  --font-main: 'Inter', "Helvetica Neue", Arial, sans-serif;
+
   /* 调色板 */
   --bg-color: #f7f9fc;
   --text-primary: #1a202c;
@@ -237,265 +239,451 @@ body.gallery-page #theme-toggle {
 .hobby-link { cursor: pointer; }
 
 /* =========================================
-   6. Gallery Styles (画廊页专属样式 - 电脑端优化版)
+   6. Gallery Styles
    ========================================= */
-.gallery-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center; /* 垂直居中 */
-  
-  /* 横向滚动核心 */
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  
-  gap: 60px; /* 电脑端卡片间距大一点，更透气 */
-  padding: 0 15vw; /* 左右留白，让第一张图居中 */
-  
-  /* 隐藏滚动条 */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+body.gallery-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(247, 249, 252, 0.94), rgba(236, 242, 247, 0.98)),
+    var(--bg-color);
 }
 
-.gallery-container::-webkit-scrollbar {
-  display: none;
+[data-theme="dark"] body.gallery-page {
+  background:
+    linear-gradient(180deg, rgba(15, 17, 21, 0.96), rgba(21, 27, 32, 0.98)),
+    var(--bg-color);
 }
 
-/* 卡片容器：透明、无框、负责定位 */
-.photo-card {
-  flex: 0 0 auto;
-  
-  /* 电脑端高度设定：不要太满，留出呼吸感 */
-  height: 70vh; 
-  /* 宽度自适应，但限制最大宽度防止太宽 */
-  width: auto;
-  max-width: 80vw;
-  
-  scroll-snap-align: center;
-  position: relative;
-  
-  /* 🔥 核心修改：去黑边 */
-  background: transparent; 
-  border: none;
-  box-shadow: none; /* 阴影移给图片 */
-  border-radius: 0;
-  
-  /* Flex 布局确保图片在卡片区域内完美居中 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  transition: transform 0.4s var(--spring-easing);
+body.gallery-page.lightbox-open {
+  overflow: hidden;
 }
 
-.photo-card:hover {
-  transform: scale(1.02); /* 悬停整体轻微放大 */
-}
-
-/* 图片本体：负责阴影和圆角 */
-.photo-card img {
-  display: block;
-  
-  /* 限制图片尺寸，保持比例 */
-  height: auto;
-  width: auto;
-  max-height: 100%; 
-  max-width: 100%;
-  
-  object-fit: contain;
-  border-radius: 8px; /* 图片圆角 */
-  
-  /* 🔥 核心修改：给图片加悬浮阴影，而不是给卡片加 */
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-  transition: box-shadow 0.3s ease;
-}
-
-/* 悬停时阴影加深 */
-.photo-card:hover img {
-  box-shadow: 0 30px 60px -12px rgba(0,0,0,0.35);
-}
-
-/* 信息文字：悬停显示，样式优化 */
-.photo-info {
+body.gallery-page .nav-header {
   position: absolute;
-  bottom: 0; 
-  left: 50%;
-  transform: translate(-50%, 20px); /* 默认向下偏移隐藏 */
-  
-  /* 改为胶囊样式，适应透明背景 */
-  width: max-content;
-  max-width: 90%;
-  padding: 12px 24px;
-  border-radius: 50px;
-  
-  /* 深色玻璃拟态背景，确保在任何图/背景上都清晰 */
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
+  top: 20px;
+  right: 24px;
+  margin-bottom: 0;
+  padding: 0;
+  z-index: 80;
+}
+
+body.gallery-page #theme-toggle {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  z-index: 90;
+}
+
+.gallery-shell {
+  width: 100%;
+  padding-bottom: 72px;
+}
+
+.gallery-hero {
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  isolation: isolate;
+  padding: 128px max(24px, calc((100vw - 1180px) / 2)) 44px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.gallery-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(90deg, rgba(7, 10, 14, 0.72), rgba(7, 10, 14, 0.24) 56%, rgba(7, 10, 14, 0.12)),
+    url('/static/images/gallery/optimized/MtYL3.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 120px;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(247, 249, 252, 0), rgba(247, 249, 252, 0.98));
+}
+
+[data-theme="dark"] .gallery-hero::after {
+  background: linear-gradient(180deg, rgba(15, 17, 21, 0), rgba(15, 17, 21, 0.98));
+}
+
+.gallery-hero-content {
+  width: min(620px, 100%);
   color: #fff;
-  
-  opacity: 0;
-  transition: all 0.3s var(--spring-easing);
-  text-align: center;
-  pointer-events: none; /* 防止鼠标挡住 */
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
 }
 
-/* 悬停显示文字 */
-.photo-card:hover .photo-info {
-  opacity: 1;
-  transform: translate(-50%, -20px); /* 向上浮出 */
+.gallery-kicker {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.photo-info h3 {
-  font-size: 16px;
-  margin-bottom: 2px;
+.gallery-hero h1 {
+  margin-bottom: 14px;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: 0.92;
+  color: #fff;
+}
+
+.gallery-lede {
+  max-width: 520px;
+  margin-bottom: 20px;
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.gallery-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 13px;
   font-weight: 600;
 }
 
-.photo-info p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: monospace; /* 参数用等宽字体 */
+.gallery-toolbar,
+.gallery-grid {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
 }
 
+.gallery-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
 
-/* =========================================
-   Mobile Optimization 
-   ========================================= */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 1px solid rgba(26, 32, 44, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-secondary);
+  box-shadow: 0 10px 24px rgba(26, 32, 44, 0.06);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.42);
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+[data-theme="dark"] .filter-chip {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .filter-chip:hover,
+[data-theme="dark"] .filter-chip.active {
+  background: #edf2f7;
+  color: #0f1115;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-auto-rows: 10px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  grid-column: span 4;
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #d7dee7;
+  color: #fff;
+  cursor: zoom-in;
+  box-shadow: 0 18px 36px rgba(26, 32, 44, 0.12);
+  grid-row: span 19;
+  transform: translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item.is-landscape {
+  grid-column: span 6;
+  grid-row: span 15;
+}
+
+.gallery-item.is-featured {
+  grid-column: span 8;
+  grid-row: span 19;
+}
+
+.gallery-item:hover,
+.gallery-item:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 46px rgba(26, 32, 44, 0.18);
+  outline: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.25s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.045);
+  filter: saturate(1.06);
+}
+
+.gallery-item-info {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 42px 18px 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.68));
+  text-align: left;
+}
+
+.gallery-item-info strong {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.gallery-item-info span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  grid-template-columns: 72px 1fr 72px;
+  align-items: center;
+  gap: 12px;
+  padding: 72px 24px 28px;
+  background: rgba(6, 8, 12, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-frame {
+  min-width: 0;
+  max-width: min(1080px, 100%);
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.lightbox-frame img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 190px);
+  margin: 0 auto 18px;
+  border-radius: 8px;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.38);
+}
+
+.lightbox-frame figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lightbox-frame strong {
+  color: #fff;
+  font-size: 18px;
+}
+
+.lightbox-frame span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.lightbox-action {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lightbox-action:hover,
+.lightbox-action:focus-visible {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+}
+
+@media (max-width: 980px) {
+  .gallery-hero {
+    min-height: 48vh;
+    padding-top: 112px;
+  }
+
+  .gallery-item,
+  .gallery-item.is-landscape {
+    grid-column: span 6;
+  }
+
+  .gallery-item.is-featured {
+    grid-column: span 12;
+  }
+}
+
 @media (max-width: 768px) {
-  
-  /* 1. 布局容器：保持全屏高度 */
-  .layout-wrapper {
-    padding: 0;
-    height: 100vh;
-    height: 100dvh;
- 
-  }
-
-  /* 2. 画廊容器 */
-  .gallery-container {
-    gap: 20px;
-    padding: 0 30px; /* 增加左右留白，聚焦感更强 */
-    scroll-padding: 0 30px;
-  }
-
-  /* 3. 照片卡片：去掉了黑色背景，改为透明 */
-  .photo-card {
-    width: 85vw;  
-    height: 75vh; /* 稍微减小高度，留出空间给底部文字 */
-    margin-top: 60px; /* 顶部留白，避开导航和刘海屏 */
-    
-    background: transparent; /* 🔥 关键：去掉了 #000 背景 */
-    box-shadow: none;        /* 去掉卡片外框阴影 */
-    border: none;            /* 去掉边框 */
-    border-radius: 0;
-    
-    /* 使用 Flex 布局让图片垂直居中 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    position: relative;
-  }
-
-  /* 4. 图片：增加投影，制造悬浮感 */
-  .photo-card img {
-    width: 100%;
-    height: auto;        /* 🔥 关键：高度自动，不再强制拉伸 */
-    max-height: 60vh;    /* 限制最大高度，防止盖住文字 */
-    object-fit: contain; 
-    background: transparent; /* 去掉图片背景 */
-    border-radius: 4px;      /* 图片本身稍微圆角 */
-    
-    /* 添加高级投影，让图片立体起来 */
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2); 
-    transition: transform 0.3s ease;
-  }
-  
-  /* 暗色模式下投影稍微亮一点 */
-  [data-theme="dark"] .photo-card img {
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
-  }
-
-  /* 5. 信息文字：移到底部，极简排版 */
-  .photo-info {
-    position: absolute;
-    bottom: -40px; /* 放在图片下方，或者卡片的最底部 */
-    left: 0;
-    right: 0;
-    
-    padding: 0;
-    background: transparent; /* 去掉渐变遮罩 */
-    opacity: 1;
-    transform: none;
-    text-align: left; /* 或者 center，看你喜好 */
-  }
-  
-  /* 标题样式 */
-  .photo-info h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary); /* 跟随主题色（亮色模式黑字，暗色模式白字） */
-    margin-bottom: 4px;
-    text-shadow: none; /* 去掉文字阴影 */
-  }
-  
-  /* 描述样式 */
-  .photo-info p {
-    font-size: 13px;
-    color: var(--text-secondary); /* 灰色辅助文字 */
-    font-family: monospace; /* 用等宽字体显示参数，很有格调 */
-  }
-
-  /* 6. 导航栏优化：固定顶部 */
   body.gallery-page .nav-header {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    left: auto;
-    bottom: auto;
-    width: auto;
-    z-index: 1000;
+    top: 16px;
+    right: 16px;
   }
-  
-  .nav-links {
-    padding: 8px 16px;
-    background: var(--card-bg); /* 跟随主题毛玻璃 */
-    border: var(--card-border);
-    backdrop-filter: blur(10px);
-  }
-  
-  /* 7. 主题按钮 */
+
   body.gallery-page #theme-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: var(--card-bg);
-    border: var(--card-border);
+    top: 16px;
+    left: 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    padding: 8px 14px;
+  }
+
+  .gallery-hero {
+    min-height: 46vh;
+    padding: 104px 20px 34px;
+    margin-bottom: 22px;
+  }
+
+  .gallery-hero::before {
+    background-position: center;
+  }
+
+  .gallery-hero h1 {
+    font-size: clamp(40px, 15vw, 64px);
+  }
+
+  .gallery-lede {
+    font-size: 15px;
+  }
+
+  .gallery-toolbar,
+  .gallery-grid {
+    width: calc(100% - 32px);
+  }
+
+  .gallery-toolbar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .gallery-toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 14px;
+  }
+
+  .gallery-item,
+  .gallery-item.is-landscape,
+  .gallery-item.is-featured {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-item.is-landscape,
+  .gallery-item.is-featured {
+    aspect-ratio: 16 / 11;
+  }
+
+  .gallery-lightbox {
+    grid-template-columns: 48px 1fr 48px;
+    gap: 6px;
+    padding: 70px 12px 22px;
+  }
+
+  .lightbox-frame img {
+    max-height: calc(100vh - 190px);
+  }
+
+  .lightbox-action {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
   }
 }
 
 /* 专门的康熙字体类 */
 .font-kangxi {
   font-family: var(--font-art);
-  font-weight: normal; /* 康熙字体自带粗细，通常不需要加粗 */
-}
-
-/* 针对画廊页面的特定优化 */
-body.gallery-page h1,
-body.gallery-page h3,
-body.gallery-page .photo-info h3 {
-  font-family: 'KangXi', serif;
-  letter-spacing: 2px; /* 古风字体字间距大一点更好看 */
-}
-
-.progress-bar {
-  position: fixed;
-  bottom: 0; left: 0;
-  height: 4px;
-  background: var(--accent);
-  width: 0%; /* 初始宽度 */
-  z-index: 1000;
-  transition: width 0.1s linear;
+  font-weight: normal;
 }

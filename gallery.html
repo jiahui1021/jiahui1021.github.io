@@ -4,156 +4,99 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography | Hu Jiahui</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Photography gallery by Hu Jiahui">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/static/css/style.css">
   </head>
-  
-    <body class="gallery-page">
-    <button id="theme-toggle" aria-label="切换主题">
+
+  <body class="gallery-page">
+    <button id="theme-toggle" class="spring-btn" aria-label="切换主题">
       <span class="icon">🌙</span>
     </button>
 
     <header class="nav-header animate-in" style="--delay: 0.1s">
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="/" class="nav-link">Home</a>
         <a href="/gallery.html" class="nav-link active">Gallery</a>
       </nav>
     </header>
-    
-    <div class="layout-wrapper">
-      
-      <main class="gallery-container animate-in" style="--delay: 0.2s">     
-        <div class="photo-card" style="background: var(--card-bg); width: 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
-          <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Through<br>My Lens</h1>
-          <p style="color: var(--text-secondary); margin-bottom: 20px;">
-            A collection of moments.<br>Swipe right to explore →
-          </p>
-          <div style="font-size: 12px; color: var(--accent);">
-            <i class="fa fa-camera"></i> Sony A7C2
+
+    <main class="gallery-shell animate-in" style="--delay: 0.2s">
+      <section class="gallery-hero" aria-labelledby="gallery-title">
+        <div class="gallery-hero-content">
+          <p class="gallery-kicker">Photography</p>
+          <h1 id="gallery-title">Through My Lens</h1>
+          <p class="gallery-lede">Mountains, sea, gardens, art, campus light, cats, and quiet city fragments.</p>
+          <div class="gallery-meta">
+            <span id="gallery-count">24 photos</span>
+            <span>Sony A7C2</span>
           </div>
         </div>
-        
-        <div class="photo-card">
-          <img src="/static/images/gallery/DHcat.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>cat in DH</h3>
-            <p style="font-size: 12px; opacity: 0.8;">April 2024 · 50mm</p>
-          </div>
-        </div>
+      </section>
 
-        <div class="photo-card">
-          <img src="/static/images/gallery/Mt.Yulong.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Mt.Jade Dragon, Yunnan </h3>
-            <p style="font-size: 12px; opacity: 0.8;">July 2024 · 35mm</p>
-          </div>
-        </div>
+      <section class="gallery-toolbar" aria-label="Gallery filters">
+        <button class="filter-chip active" type="button" data-filter="all">
+          <i class="fa fa-th-large" aria-hidden="true"></i>
+          <span>All</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="mountains">
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+          <span>Mountains</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="sea">
+          <i class="fa fa-tint" aria-hidden="true"></i>
+          <span>Sea</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="campus">
+          <i class="fa fa-leaf" aria-hidden="true"></i>
+          <span>Campus</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="gardens">
+          <i class="fa fa-tree" aria-hidden="true"></i>
+          <span>Gardens</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="art">
+          <i class="fa fa-paint-brush" aria-hidden="true"></i>
+          <span>Art</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="cities">
+          <i class="fa fa-building-o" aria-hidden="true"></i>
+          <span>Cities</span>
+        </button>
+        <button class="filter-chip" type="button" data-filter="cats">
+          <i class="fa fa-paw" aria-hidden="true"></i>
+          <span>Cats</span>
+        </button>
+      </section>
 
-        <div class="photo-card">
-          <img src="/static/images/gallery/MtYL2.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Mt.Jade Dragon, Yunnan </h3>
-            <p style="font-size: 12px; opacity: 0.8;">July 2024 · 35mm</p>
-          </div>
-        </div>
+      <section id="gallery-grid" class="gallery-grid" aria-live="polite"></section>
+    </main>
 
-        <div class="photo-card">
-          <img src="/static/images/gallery/Sunset.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Sunset in Qingdao</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/sea2.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Sea in Qingdao</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/sea.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Huang Sea</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/RedMoon.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>海上明月共潮生</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 200mm</p>
-          </div>
-        </div>   
-        
-        <div class="photo-card">
-          <img src="/static/images/gallery/zsl.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Sun Yat-sen Mausoleum, Nanjing</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/Nanjing.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>Sun Yat-sen Mausoleum, Nanjing</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/jng.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>The Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders</h3>
-            <p style="font-size: 12px; opacity: 0.8;">June 2024 · 35mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/scut_ws.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>SCUT Campus </h3>
-            <p style="font-size: 12px; opacity: 0.8;">Nov 2024 · 130mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/scut_ws2.JPG" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>SCUT Campus </h3>
-            <p style="font-size: 12px; opacity: 0.8;">Nov 2024 · 130mm</p>
-          </div>
-        </div>
-
-        <div class="photo-card">
-          <img src="/static/images/gallery/cat_scut.jpg" alt="Description" loading="lazy">
-          <div class="photo-info">
-            <h3>cat in SCUT</h3>
-            <p style="font-size: 12px; opacity: 0.8;">Dec 2024 · 80mm</p>
-          </div>
-        </div>
-        
-
-
-      </main>
-
+    <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+      <button class="lightbox-action lightbox-close" type="button" aria-label="Close photo">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-action lightbox-prev" type="button" aria-label="Previous photo">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+      </button>
+      <figure class="lightbox-frame">
+        <img id="lightbox-img" alt="">
+        <figcaption>
+          <strong id="lightbox-title"></strong>
+          <span id="lightbox-caption"></span>
+        </figcaption>
+      </figure>
+      <button class="lightbox-action lightbox-next" type="button" aria-label="Next photo">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </button>
     </div>
 
     <script src="/static/js/dark-mode.js"></script>
-    <script>
-      const container = document.querySelector('.gallery-container');
-      container.addEventListener('wheel', (evt) => {
-        if (evt.deltaY !== 0) { 
-          evt.preventDefault();
-          container.scrollLeft += evt.deltaY;
-        }
-      });
-
-    </script>
+    <script src="/static/js/gallery.js"></script>
   </body>
 </html>
