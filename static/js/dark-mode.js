@@ -8,7 +8,7 @@
   
   // 获取当前主题
   function getCurrentTheme() {
-    return localStorage.getItem(THEME_KEY) || LIGHT_THEME;
+    return localStorage.getItem(THEME_KEY) || DARK_THEME;
   }
   
   // 设置主题
@@ -51,26 +51,6 @@
     const savedTheme = getCurrentTheme();
     setTheme(savedTheme);
     
-    // 检查系统偏好
-    if (savedTheme === LIGHT_THEME && window.matchMedia) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-      if (prefersDark.matches && !localStorage.getItem(THEME_KEY)) {
-        // 如果系统偏好暗色且用户没有手动设置过，则使用系统偏好
-        setTheme(DARK_THEME);
-      }
-    }
-    
-    // 监听系统主题变化
-    if (window.matchMedia) {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      mediaQuery.addEventListener('change', (e) => {
-        // 只有在用户没有手动设置过主题时才跟随系统偏好
-        if (!localStorage.getItem(THEME_KEY)) {
-          setTheme(e.matches ? DARK_THEME : LIGHT_THEME);
-        }
-      });
-    }
-    
     // 绑定切换按钮
     const button = document.getElementById('theme-toggle');
     if (button) {
@@ -90,4 +70,3 @@
   window.setTheme = setTheme;
   window.getCurrentTheme = getCurrentTheme;
 })();
-

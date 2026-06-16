@@ -236,7 +236,7 @@
     });
 
     if (count) {
-      count.textContent = `${visiblePhotos.length} photos`;
+      count.textContent = `${visiblePhotos.length} ${visiblePhotos.length === 1 ? 'photo' : 'photos'}`;
     }
   }
 
