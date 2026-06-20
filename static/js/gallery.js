@@ -5,128 +5,128 @@
   const photos = [
     {
       file: 'MtYL3.webp',
-      title: 'Misty Forest',
-      caption: 'Jade Dragon Snow Mountain · Yunnan',
+      title: 'Silent Canopy',
+      caption: 'Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'landscape',
       featured: true
     },
     {
       file: 'MtYL2.webp',
-      title: 'Jade Dragon Snow Mountain',
-      caption: 'Yunnan',
+      title: 'Where Clouds Descend',
+      caption: 'Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'landscape'
     },
     {
       file: 'Mt.Yulong.webp',
-      title: 'Clouds Over Yulong',
-      caption: 'Yunnan',
+      title: 'Glacier and Stone',
+      caption: 'Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'portrait'
     },
     {
       file: 'Sunset.webp',
-      title: 'Sunset in Qingdao',
-      caption: 'Qingdao',
+      title: 'Chasing the Golden Tide',
+      caption: 'Qingdao Coast',
       category: 'sea',
       orientation: 'portrait',
       featured: true
     },
     {
       file: 'sea.webp',
-      title: 'Blue Distance',
+      title: 'Indigo Blue',
       caption: 'Qingdao',
       category: 'sea',
       orientation: 'landscape'
     },
     {
       file: 'sea2.webp',
-      title: 'Shoreline',
+      title: 'Edge of the Tide',
       caption: 'Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea3.webp',
-      title: 'Sea Shade',
+      title: 'Dappled Shimmer',
       caption: 'Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea4.webp',
-      title: 'Shimmer',
+      title: 'Where Green Meets Wave',
       caption: 'Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea5.webp',
-      title: 'Waves Against Rock',
+      title: 'Shadows and Shimmer',
       caption: 'Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'RedMoon.webp',
-      title: 'Moonrise Over the Sea',
+      title: 'Crimson Tide',
       caption: '海上明月共潮生',
       category: 'sea',
       orientation: 'landscape'
     },
     {
       file: 'hk.webp',
-      title: 'Victoria Harbour',
+      title: 'Harbor Front',
       caption: 'Hong Kong',
       category: 'cities',
       orientation: 'portrait'
     },
     {
       file: 'Nanjing.webp',
-      title: 'Bird Over Nanjing',
+      title: 'Flight Over Stone',
       caption: 'Nanjing',
       category: 'cities',
       orientation: 'landscape'
     },
     {
       file: 'jng.webp',
-      title: 'Memorial Hall',
+      title: 'Memorial Sculpture',
       caption: 'Nanjing',
       category: 'cities',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws.webp',
-      title: 'SCUT Tower',
-      caption: 'South China University of Technology',
+      title: 'The Clock Tower',
+      caption: 'SCUT Landmark',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws2.webp',
-      title: 'Green Roof',
+      title: 'Old Green Roof',
       caption: 'SCUT Campus',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws3.webp',
-      title: 'Old Gate',
+      title: 'Traditional Gate',
       caption: 'SCUT Campus',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws4.webp',
-      title: 'Pink Wall',
+      title: 'Red Brick Facade',
       caption: 'SCUT Campus',
       category: 'campus',
       orientation: 'landscape'
     },
     {
       file: 'sunset_scut.webp',
-      title: 'Campus Sunset',
+      title: 'Golden Canopy',
       caption: 'SCUT Campus',
       category: 'campus',
       orientation: 'landscape',
@@ -134,21 +134,21 @@
     },
     {
       file: 'zwl.webp',
-      title: 'Blue Tile Gate',
-      caption: 'Sun Yat-sen Mausoleum · Nanjing',
+      title: 'Blue Glaze Archway',
+      caption: 'Sun Yat-sen Mausoleum',
       category: 'cities',
       orientation: 'landscape'
     },
     {
       file: 'zwy.webp',
-      title: 'Lawn Light',
+      title: 'Tranquil Mirror',
       caption: 'South China Botanical Garden',
       category: 'gardens',
       orientation: 'landscape'
     },
     {
       file: 'zwy2.webp',
-      title: 'Lake Reflection',
+      title: 'Dappled Meadow',
       caption: 'South China Botanical Garden',
       category: 'gardens',
       orientation: 'portrait'
@@ -162,14 +162,14 @@
     },
     {
       file: 'DHcat.webp',
-      title: 'Cat in DH',
-      caption: 'Campus cat',
+      title: 'Silent Sentinel',
+      caption: 'Campus Companion',
       category: 'cats',
       orientation: 'portrait'
     },
     {
       file: 'cat_scut.webp',
-      title: 'Cat in SCUT',
+      title: 'Petals and Play',
       caption: 'SCUT Campus',
       category: 'cats',
       orientation: 'portrait'
@@ -210,15 +210,21 @@
         photo.featured ? 'is-featured' : ''
       ].filter(Boolean).join(' ');
       item.setAttribute('aria-label', `${photo.title}, ${photo.caption}`);
+      item.style.opacity = '0';
 
       const img = document.createElement('img');
-      img.src = imagePath(photo);
       img.alt = photo.title;
       img.loading = 'eager';
       img.decoding = 'async';
       if (index === 0) {
         img.fetchPriority = 'high';
       }
+
+      img.addEventListener('load', () => {
+        img.style.opacity = '1';
+      });
+
+      img.src = imagePath(photo);
 
       const info = document.createElement('span');
       info.className = 'gallery-item-info';
@@ -233,6 +239,12 @@
       item.append(img, info);
       item.addEventListener('click', () => openLightbox(index));
       grid.append(item);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          item.style.opacity = '1';
+        });
+      });
     });
 
     if (count) {
@@ -268,10 +280,25 @@
     const photo = visiblePhotos[activeIndex];
     if (!photo) return;
 
-    lightboxImg.src = imagePath(photo);
-    lightboxImg.alt = photo.title;
-    lightboxTitle.textContent = photo.title;
-    lightboxCaption.textContent = photo.caption;
+    lightboxImg.style.opacity = '0';
+    lightboxImg.style.transform = 'scale(0.96)';
+
+    setTimeout(() => {
+      lightboxImg.src = imagePath(photo);
+      lightboxImg.alt = photo.title;
+      lightboxTitle.textContent = photo.title;
+      lightboxCaption.textContent = photo.caption;
+
+      if (lightboxImg.complete) {
+        lightboxImg.style.opacity = '1';
+        lightboxImg.style.transform = 'scale(1)';
+      } else {
+        lightboxImg.addEventListener('load', () => {
+          lightboxImg.style.opacity = '1';
+          lightboxImg.style.transform = 'scale(1)';
+        }, { once: true });
+      }
+    }, 200);
   }
 
   function showPhoto(direction) {
