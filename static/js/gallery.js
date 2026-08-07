@@ -6,7 +6,7 @@
     {
       file: 'MtYL3.webp',
       title: 'Silent Canopy',
-      caption: 'Jade Dragon Snow Mountain',
+      caption: 'Clouds drifting through the forests of Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'landscape',
       featured: true
@@ -14,21 +14,35 @@
     {
       file: 'MtYL2.webp',
       title: 'Where Clouds Descend',
-      caption: 'Jade Dragon Snow Mountain',
+      caption: 'Glacier ridges beneath a veil of cloud at Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'landscape'
     },
     {
       file: 'Mt.Yulong.webp',
       title: 'Glacier and Stone',
-      caption: 'Jade Dragon Snow Mountain',
+      caption: 'Weathered rock and snow along the high slopes of Jade Dragon Snow Mountain',
       category: 'mountains',
       orientation: 'portrait'
     },
     {
-      file: 'Sunset.webp',
-      title: 'Chasing the Golden Tide',
-      caption: 'Qingdao Coast',
+      file: 'mountain-lake-cliff.webp',
+      title: 'Clouds Above the Lake',
+      caption: 'Cliffs rising above a quiet mountain lake',
+      category: 'mountains',
+      orientation: 'portrait'
+    },
+    {
+      file: 'misty-mountain-layers.webp',
+      title: 'Layers of Blue',
+      caption: 'Distant ridges dissolving into the evening haze',
+      category: 'mountains',
+      orientation: 'landscape'
+    },
+    {
+      file: 'qingdao-sunset-silhouette.webp',
+      title: 'Golden Wake',
+      caption: 'A jet ski cutting across Qingdao’s golden sunset',
       category: 'sea',
       orientation: 'portrait',
       featured: true
@@ -36,98 +50,98 @@
     {
       file: 'sea.webp',
       title: 'Indigo Blue',
-      caption: 'Qingdao',
+      caption: 'Blue water and distant islands along Qingdao’s coast',
       category: 'sea',
       orientation: 'landscape'
     },
     {
       file: 'sea2.webp',
       title: 'Edge of the Tide',
-      caption: 'Qingdao',
+      caption: 'Waves folding over dark rocks at the Qingdao shore',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea3.webp',
       title: 'Dappled Shimmer',
-      caption: 'Qingdao',
+      caption: 'Sunlight scattered across the quiet sea near Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea4.webp',
       title: 'Where Green Meets Wave',
-      caption: 'Qingdao',
+      caption: 'A silver path of light stretching across the tide',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'sea5.webp',
       title: 'Shadows and Shimmer',
-      caption: 'Qingdao',
+      caption: 'Clear waves breaking over the coastal rocks of Qingdao',
       category: 'sea',
       orientation: 'portrait'
     },
     {
       file: 'RedMoon.webp',
       title: 'Crimson Tide',
-      caption: '海上明月共潮生',
+      caption: 'A red moon rising above the evening tide',
       category: 'sea',
       orientation: 'landscape'
     },
     {
-      file: 'hk.webp',
-      title: 'Harbor Front',
-      caption: 'Hong Kong',
+      file: 'hong-kong-harbour.webp',
+      title: 'Blue Hour Harbour',
+      caption: 'Hong Kong’s harbour front beneath a hazy blue sky',
       category: 'cities',
       orientation: 'portrait'
     },
     {
       file: 'Nanjing.webp',
       title: 'Flight Over Stone',
-      caption: 'Nanjing',
+      caption: 'A lone bird crossing the skyline above Nanjing',
       category: 'cities',
       orientation: 'landscape'
     },
     {
       file: 'jng.webp',
       title: 'Memorial Sculpture',
-      caption: 'Nanjing',
+      caption: 'A stone figure standing against the memorial walls of Nanjing',
       category: 'cities',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws.webp',
       title: 'The Clock Tower',
-      caption: 'SCUT Landmark',
+      caption: 'SCUT’s clock tower framed by summer blue',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws2.webp',
       title: 'Old Green Roof',
-      caption: 'SCUT Campus',
+      caption: 'An old tiled roof beneath the campus trees',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws3.webp',
       title: 'Traditional Gate',
-      caption: 'SCUT Campus',
+      caption: 'The traditional gate of SCUT in afternoon light',
       category: 'campus',
       orientation: 'portrait'
     },
     {
       file: 'scut_ws4.webp',
       title: 'Red Brick Facade',
-      caption: 'SCUT Campus',
+      caption: 'Sunlit geometry on a red-brick campus facade',
       category: 'campus',
       orientation: 'landscape'
     },
     {
       file: 'sunset_scut.webp',
       title: 'Golden Canopy',
-      caption: 'SCUT Campus',
+      caption: 'Evening clouds glowing above the SCUT campus',
       category: 'campus',
       orientation: 'landscape',
       featured: true
@@ -135,42 +149,42 @@
     {
       file: 'zwl.webp',
       title: 'Blue Glaze Archway',
-      caption: 'Sun Yat-sen Mausoleum',
+      caption: 'A blue-and-white archway at Sun Yat-sen Mausoleum',
       category: 'cities',
       orientation: 'landscape'
     },
     {
       file: 'zwy.webp',
       title: 'Tranquil Mirror',
-      caption: 'South China Botanical Garden',
+      caption: 'A quiet lawn beneath the trees at South China Botanical Garden',
       category: 'gardens',
       orientation: 'landscape'
     },
     {
       file: 'zwy2.webp',
       title: 'Dappled Meadow',
-      caption: 'South China Botanical Garden',
+      caption: 'A garden pond reflecting trees and sky',
       category: 'gardens',
       orientation: 'portrait'
     },
     {
       file: 'water-lily-monet.webp',
       title: 'Water Lilies',
-      caption: 'Claude Monet',
+      caption: 'Monet’s water lilies behind a veil of color',
       category: 'art',
       orientation: 'portrait'
     },
     {
       file: 'DHcat.webp',
       title: 'Silent Sentinel',
-      caption: 'Campus Companion',
+      caption: 'A campus cat resting in a shaft of window light',
       category: 'cats',
       orientation: 'portrait'
     },
     {
       file: 'cat_scut.webp',
       title: 'Petals and Play',
-      caption: 'SCUT Campus',
+      caption: 'A curious cat reaching toward flowers on campus',
       category: 'cats',
       orientation: 'portrait'
     }
