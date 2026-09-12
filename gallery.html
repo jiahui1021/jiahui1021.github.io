@@ -11,7 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('preferred-theme');
+          var dark = saved
+            ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/static/css/style.css?v=20260912">
   </head>
 
   <body class="gallery-page">
@@ -96,7 +108,7 @@
       </button>
     </div>
 
-    <script src="/static/js/dark-mode.js"></script>
-    <script src="/static/js/gallery.js"></script>
+    <script src="/static/js/dark-mode.js?v=20260912"></script>
+    <script src="/static/js/gallery.js?v=20260912"></script>
   </body>
 </html>

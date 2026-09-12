@@ -6,9 +6,13 @@
   const DARK_THEME = 'dark';
   const LIGHT_THEME = 'light';
   
-  // 获取当前主题
+  // 获取当前主题：优先用户保存的选择，否则跟随系统偏好
   function getCurrentTheme() {
-    return localStorage.getItem(THEME_KEY) || DARK_THEME;
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === DARK_THEME || saved === LIGHT_THEME) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? DARK_THEME
+      : LIGHT_THEME;
   }
   
   // 设置主题
@@ -29,12 +33,16 @@
     const button = document.getElementById('theme-toggle');
     if (!button) return;
     
+    // 只改图标本身，保留按钮内的 .icon 结构
+    const icon = button.querySelector('.icon') || button;
     if (theme === DARK_THEME) {
-      button.textContent = '☀️';  // 太阳图标（切换到亮色模式）
+      icon.textContent = '☀️';  // 太阳图标（切换到亮色模式）
       button.setAttribute('title', 'Switch to light mode');
+      button.setAttribute('aria-label', 'Switch to light mode');
     } else {
-      button.textContent = '🌙';  // 月亮图标（切换到暗色模式）
+      icon.textContent = '🌙';  // 月亮图标（切换到暗色模式）
       button.setAttribute('title', 'Switch to dark mode');
+      button.setAttribute('aria-label', 'Switch to dark mode');
     }
   }
   

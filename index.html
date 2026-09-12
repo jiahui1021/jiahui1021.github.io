@@ -24,7 +24,19 @@
 
     <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
 
-    <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem('preferred-theme');
+          var dark = saved
+            ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="/static/css/style.css?v=20260912">
   </head>
 
   <body>
@@ -172,6 +184,6 @@ q2 -14 -8 -25q-9 -11 -24 -11h-192q-15 0 -24 11q-10 11 -8 25l58 433q-58 38 -58 10
       </main>
     </div>
 
-    <script src="/static/js/dark-mode.js"></script>
+    <script src="/static/js/dark-mode.js?v=20260912"></script>
   </body>
 </html>

@@ -91,7 +91,7 @@ ul { list-style: none; }
   margin: 0 auto;
   padding: 56px 32px 80px;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 48px;
   align-items: start;
 }
@@ -326,7 +326,6 @@ body.gallery-page #theme-toggle {
 @media (max-width: 900px) {
   .pub-item { flex-direction: column; }
   .pub-thumb { flex: 0 0 auto; width: 100%; }
-}
 }
 
 /* =========================================
