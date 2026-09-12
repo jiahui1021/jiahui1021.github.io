@@ -1,12 +1,11 @@
 /* =========================================
    1. Variables & Reset & Font (全局通用)
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap');
 
 /* 1. 定义康熙字典体 */
 @font-face {
   font-family: 'KangXi';
-  src: url('../fonts/KangXi.otf') format('truetype'); 
+  src: url('../fonts/KangXi.otf') format('opentype'); 
   font-display: swap; 
 }
 
@@ -88,12 +87,12 @@ ul { list-style: none; }
 
 /* [首页默认布局] Grid 布局，侧边栏+内容 */
 .layout-wrapper {
-  max-width: 1180px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 60px 28px 80px;
+  padding: 56px 32px 80px;
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 56px;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -245,12 +244,14 @@ body.gallery-page #theme-toggle {
 .avatar-container { position: relative; width: 120px; height: 120px; margin: 0 0 28px; }
 .avatar { width: 100%; height: 100%; border-radius: 12px; object-fit: cover; border: 1px solid rgba(0, 0, 0, 0.06); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
 .status-badge { position: absolute; bottom: -8px; right: -8px; background: var(--surface-color); width: 34px; height: 34px; border: var(--card-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: var(--card-shadow); animation: wave 2s infinite; }
-.name { font-family: var(--font-display); font-size: 30px; line-height: 1.1; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em; }
-.bio { color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; letter-spacing: 0.01em; }
+.name { font-family: var(--font-display); font-size: 26px; line-height: 1.1; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em; }
+.bio { color: var(--text-secondary); font-size: 14px; margin-bottom: 32px; letter-spacing: 0.01em; }
 .social-links { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; }
 .profile-card .social-links { justify-content: flex-start; }
 .social-btn { width: 40px; height: 40px; border-radius: 10px; background: var(--surface-muted); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 16px; border: 1px solid transparent; transition: all 0.2s ease; }
 .social-btn:hover { color: var(--accent); background: var(--accent-subtle); border-color: rgba(30, 64, 175, 0.12); transform: translateY(-2px); }
+.social-btn svg { width: 17px; height: 17px; fill: currentColor; display: block; }
+.download-btn svg { width: 13px; height: 13px; fill: currentColor; display: block; }
 [data-theme="dark"] .social-btn { background: rgba(255, 255, 255, 0.06); }
 [data-theme="dark"] .social-btn:hover { color: var(--accent); background: rgba(96, 165, 250, 0.1); border-color: rgba(96, 165, 250, 0.2); }
 .contact-mini { font-size: 13px; color: var(--text-secondary); margin-bottom: 28px; }
@@ -260,10 +261,11 @@ body.gallery-page #theme-toggle {
 /* =========================================
    5. Home Content (首页内容样式)
    ========================================= */
-.section-title { font-family: var(--font-display); font-size: 24px; line-height: 1.1; font-weight: 800; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em; }
-.section-title::before { content: ''; display: block; width: 4px; height: 24px; background: var(--accent); border-radius: 2px; }
+.section-title { font-family: var(--font-display); font-size: 20px; line-height: 1.15; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em; }
+.section-title::before { content: ''; display: block; width: 3px; height: 20px; background: var(--accent); border-radius: 2px; }
 .highlight { color: var(--accent); }
-.text-content p { margin-bottom: 18px; color: var(--text-primary); font-family: var(--font-serif); font-size: 20px; line-height: 1.55; }
+.text-content p { margin-bottom: 14px; color: var(--text-primary); font-family: var(--font-serif); font-size: 17px; line-height: 1.65; max-width: 78ch; }
+.text-content p:last-child { margin-bottom: 0; }
 .news-box { background: var(--surface-muted); border-radius: 10px; padding: 20px; margin-top: 24px; border: 1px solid rgba(0, 0, 0, 0.03); }
 .news-header { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; letter-spacing: 0.03em; }
 .news-list li { display: flex; gap: 12px; font-size: 14px; margin-bottom: 8px; }
@@ -296,6 +298,36 @@ body.gallery-page #theme-toggle {
 .hobby-tag { background: var(--surface-muted); padding: 10px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; transition: all 0.25s ease; cursor: default; border: 1px solid rgba(0, 0, 0, 0.04); }
 .hobby-tag:hover { transform: translateY(-2px); background: var(--text-primary); color: var(--bg-color); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
 .hobby-link { cursor: pointer; }
+.nowrap { white-space: nowrap; }
+
+/* Publications */
+.pub-list { display: flex; flex-direction: column; gap: 14px; }
+.pub-item { display: flex; gap: 18px; align-items: flex-start; padding: 18px; border-radius: 10px; background: var(--surface-muted); border: 1px solid rgba(0, 0, 0, 0.04); transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.pub-item:hover { transform: translateY(-2px); border-color: rgba(30, 64, 175, 0.15); box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+[data-theme="dark"] .pub-item:hover { border-color: rgba(96, 165, 250, 0.2); }
+.pub-thumb { flex: 0 0 300px; display: block; overflow: hidden; border-radius: 8px; padding: 8px; background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.06); }
+.pub-thumb img { width: 100%; height: auto; display: block; transition: transform 0.35s ease; }
+.pub-item:hover .pub-thumb img { transform: scale(1.03); }
+[data-theme="dark"] .pub-thumb { border-color: rgba(255, 255, 255, 0.10); }
+.pub-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pub-venue { align-self: flex-start; font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-subtle); padding: 3px 8px; border-radius: 5px; }
+.pub-title { font-size: 15px; font-weight: 700; line-height: 1.35; }
+.pub-title a { border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+.pub-title a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.pub-authors { font-size: 13px; color: var(--text-secondary); }
+.pub-authors strong { color: var(--text-primary); font-weight: 700; }
+.pub-note { font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+.pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.pub-links a { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; padding: 4px 10px; border-radius: 6px; background: var(--surface-color); border: 1px solid rgba(0, 0, 0, 0.06); color: var(--text-secondary); transition: all 0.2s ease; }
+.pub-links a:hover { color: var(--accent); border-color: rgba(30, 64, 175, 0.2); background: var(--accent-subtle); }
+[data-theme="dark"] .pub-links a { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .pub-links a:hover { color: var(--accent); border-color: rgba(96, 165, 250, 0.25); background: rgba(96, 165, 250, 0.1); }
+
+@media (max-width: 900px) {
+  .pub-item { flex-direction: column; }
+  .pub-thumb { flex: 0 0 auto; width: 100%; }
+}
+}
 
 /* =========================================
    6. Gallery Styles
@@ -786,4 +818,16 @@ body.gallery-page #theme-toggle {
 .font-kangxi {
   font-family: var(--font-art);
   font-weight: normal;
+}
+
+/* =========================================
+   Reduced motion
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

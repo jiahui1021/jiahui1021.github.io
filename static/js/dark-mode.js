@@ -31,10 +31,10 @@
     
     if (theme === DARK_THEME) {
       button.textContent = '☀️';  // 太阳图标（切换到亮色模式）
-      button.setAttribute('title', '切换到亮色模式');
+      button.setAttribute('title', 'Switch to light mode');
     } else {
       button.textContent = '🌙';  // 月亮图标（切换到暗色模式）
-      button.setAttribute('title', '切换到暗色模式');
+      button.setAttribute('title', 'Switch to dark mode');
     }
   }
   
