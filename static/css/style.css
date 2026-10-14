@@ -311,6 +311,10 @@ body.gallery-page #theme-toggle {
 .pub-item:hover .pub-thumb img { transform: scale(1.03); }
 [data-theme="dark"] .pub-thumb { border-color: rgba(255, 255, 255, 0.10); }
 .pub-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pub-item-compact { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 12px 18px; align-items: center; }
+.pub-item-compact > .pub-note,
+.pub-item-compact > .pub-links { grid-column: 1 / -1; }
+.pub-item-compact > .pub-links { margin-top: 0; }
 .pub-venue { align-self: flex-start; font-family: var(--font-display); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-subtle); padding: 3px 8px; border-radius: 5px; }
 .pub-title { font-size: 15px; font-weight: 700; line-height: 1.35; }
 .pub-title a { border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
@@ -326,6 +330,7 @@ body.gallery-page #theme-toggle {
 
 @media (max-width: 900px) {
   .pub-item { flex-direction: column; }
+  .pub-item-compact { grid-template-columns: minmax(0, 1fr); }
   .pub-thumb { flex: 0 0 auto; width: 100%; }
 }
 
