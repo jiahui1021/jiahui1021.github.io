@@ -23,7 +23,7 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="stylesheet" href="/static/css/style.css?v=20261015-gallery">
+    <link rel="stylesheet" href="/static/css/style.css?v=20261015-gallery-layout">
   </head>
 
   <body class="gallery-page">
@@ -97,7 +97,9 @@
         <i class="fa fa-angle-left" aria-hidden="true"></i>
       </button>
       <figure class="lightbox-frame">
-        <img id="lightbox-img" alt="">
+        <div class="lightbox-image">
+          <img id="lightbox-img" alt="">
+        </div>
         <figcaption>
           <strong id="lightbox-title"></strong>
           <span id="lightbox-caption"></span>
@@ -109,6 +111,6 @@
     </div>
 
     <script src="/static/js/dark-mode.js?v=20260912"></script>
-    <script src="/static/js/gallery.js?v=20260912"></script>
+    <script src="/static/js/gallery.js?v=20261015-layout"></script>
   </body>
 </html>
