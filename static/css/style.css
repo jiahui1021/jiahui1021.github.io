@@ -338,6 +338,8 @@ body.gallery-page #theme-toggle {
    6. Gallery Styles
    ========================================= */
 body.gallery-page {
+  --font-main: var(--font-serif);
+  --font-display: var(--font-serif);
   min-height: 100vh;
   background: var(--bg-color);
 }
@@ -416,17 +418,18 @@ body.gallery-page #theme-toggle {
 
 .gallery-kicker {
   margin-bottom: 10px;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
   letter-spacing: 0;
 }
 
 .gallery-hero h1 {
   margin-bottom: 16px;
   font-family: var(--font-display);
-  font-size: 80px;
-  line-height: 0.9;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: #fff;
 }
@@ -457,8 +460,8 @@ body.gallery-page #theme-toggle {
   color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .gallery-toolbar,
@@ -488,7 +491,7 @@ body.gallery-page #theme-toggle {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   transition: all 0.25s ease;
 }
@@ -534,6 +537,7 @@ body.gallery-page #theme-toggle {
   overflow: hidden;
   background: var(--surface-muted);
   color: #fff;
+  font-family: var(--font-serif);
   cursor: zoom-in;
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.06),
@@ -592,15 +596,16 @@ body.gallery-page #theme-toggle {
 .gallery-item-info strong {
   font-family: var(--font-display);
   color: #fff;
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
   letter-spacing: -0.01em;
 }
 
 .gallery-item-info span {
   color: rgba(255, 255, 255, 0.72);
   font-size: 13px;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .gallery-lightbox {
@@ -648,7 +653,8 @@ body.gallery-page #theme-toggle {
 
 .lightbox-frame strong {
   color: #fff;
-  font-size: 18px;
+  font-size: 19px;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
