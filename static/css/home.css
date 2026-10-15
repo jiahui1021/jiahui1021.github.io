@@ -26,12 +26,15 @@
 .home-page .avatar { border-radius: 8px; box-shadow: none; }
 .home-page .status-badge { display: none; }
 .home-page .name { font-family: var(--font-serif); font-size: 29px; font-weight: 700; margin-bottom: 8px; }
-.home-page .bio { font-size: 13px; line-height: 1.65; margin-bottom: 16px; letter-spacing: 0; }
+.home-page .bio { display: grid; gap: 12px; font-family: var(--font-serif); font-size: 15px; line-height: 1.4; margin: 14px 0 18px; letter-spacing: 0; }
+.home-page .profile-affiliation { display: grid; gap: 2px; }
+.home-page .profile-role { color: var(--text-primary); font-weight: 600; }
+.home-page .profile-institution { color: var(--text-secondary); font-size: 14px; }
 .home-page .social-links { gap: 8px; margin-bottom: 12px; }
 .home-page .social-btn { width: 31px; height: 31px; border-radius: 6px; }
 .home-page .social-btn svg { width: 15px; height: 15px; }
-.home-page .contact-mini { font-size: 11.5px; margin-bottom: 18px; }
-.home-page .download-btn { padding: 7px 12px; font-size: 12px; border-radius: 6px; }
+.home-page .contact-mini { font-family: var(--font-serif); font-size: 13px; margin-bottom: 18px; }
+.home-page .download-btn { padding: 7px 12px; font-family: var(--font-serif); font-size: 13px; font-weight: 600; border-radius: 6px; }
 .home-page .main-content { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 20px; }
 .home-page .content-card { margin: 0; }
 .home-page #about,
@@ -88,7 +91,7 @@
   .home-page .profile-card { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; gap: 4px 16px; align-items: center; }
   .home-page .avatar-container { width: 80px; height: 80px; grid-row: 1 / 4; margin: 0; }
   .home-page .name { font-size: 25px; margin: 0; }
-  .home-page .bio { grid-column: 2; grid-row: 2; margin: 0; }
+  .home-page .bio { grid-column: 2; grid-row: 2; grid-template-columns: repeat(2, max-content); gap: 8px 20px; margin: 3px 0 0; }
   .home-page .social-links { grid-column: 2; grid-row: 3; margin: 4px 0 0; }
   .home-page .contact-mini { grid-column: 3; grid-row: 1 / 3; margin: 0; }
   .home-page .download-btn { grid-column: 3; grid-row: 3; justify-self: start; }
@@ -101,7 +104,8 @@
   .home-page .layout-wrapper { padding: 18px 18px 28px; }
   .home-page .profile-card { grid-template-columns: 72px minmax(0, 1fr); column-gap: 14px; }
   .home-page .avatar-container { width: 72px; height: 72px; grid-row: 1 / 3; align-self: start; }
-  .home-page .bio { font-size: 12px; }
+  .home-page .bio { grid-template-columns: minmax(0, 1fr); gap: 7px; font-size: 14px; }
+  .home-page .profile-institution { font-size: 13px; }
   .home-page .social-links { grid-column: 1 / -1; grid-row: 3; }
   .home-page .contact-mini { grid-column: 1 / -1; grid-row: 4; margin-top: 5px; }
   .home-page .download-btn { grid-column: 2; grid-row: 3; justify-self: end; margin-top: 4px; }
