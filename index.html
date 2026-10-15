@@ -37,9 +37,10 @@
       })();
     </script>
     <link rel="stylesheet" href="/static/css/style.css?v=20261014">
+    <link rel="stylesheet" href="/static/css/home.css?v=20261015">
   </head>
 
-  <body>
+  <body class="home-page">
     <div class="bg-gradient"></div>
 
 
@@ -120,55 +121,55 @@ q2 -14 -8 -25q-9 -11 -24 -11h-192q-15 0 -24 11q-10 11 -8 25l58 433q-58 38 -58 10
         <section id="publications" class="content-card glass-card animate-in" style="--delay: 0.3s">
           <h2 class="section-title">Publications</h2>
           <ul class="pub-list">
-            <li class="pub-item spring-hover pub-item-compact">
+            <li class="pub-item">
               <a class="pub-thumb" href="https://arxiv.org/abs/2610.15324" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-                <img src="/static/images/pubs/tempokv.png" alt="Overview of TempoKV: offline predictor calibration and online predictive residual quantization of keys and values" loading="lazy" width="1600" height="625">
+              <img src="/static/images/pubs/tempokv.png" alt="Overview of TempoKV: offline predictor calibration and online predictive residual quantization of keys and values" loading="lazy" width="1600" height="625">
               </a>
               <div class="pub-body">
-                <div class="pub-venue">Preprint</div>
-                <h3 class="pub-title">
-                  <a href="https://arxiv.org/abs/2610.15324" target="_blank" rel="noopener noreferrer">TempoKV: Predictive KV Cache Quantization for Autoregressive Video Generation</a>
-                </h3>
+                <h3 class="pub-title"><a href="https://arxiv.org/abs/2610.15324" target="_blank" rel="noopener noreferrer">TempoKV: Predictive KV Cache Quantization for Autoregressive Video Generation</a></h3>
                 <p class="pub-authors"><strong>Jiahui Hu*</strong>, Weile Mo*, Peiliang Cai, Jiacheng Liu, Jinkui Ren, Xiantao Zhang, Xiaobing Tu, Linfeng Zhang</p>
-              </div>
-              <p class="pub-note">Training-free predictive KV cache quantization for autoregressive video generation. Predicts keys from temporal history and values from the current key and recent values, storing only low-bit residuals. Up to 6.71&times; KV cache compression, evaluated on Self-Forcing, Causal Forcing and LongCat-Video-13B.</p>
-              <div class="pub-links">
-                <a href="https://arxiv.org/abs/2610.15324" target="_blank" rel="noopener noreferrer">arXiv</a>
-              </div>
-            </li>
-            <li class="pub-item spring-hover pub-item-compact">
-              <a class="pub-thumb" href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-                <img src="/static/images/pubs/linca.webp" alt="Overview of the LinCa framework: decompose, predict, reconstruct" loading="lazy" width="1200" height="562">
-              </a>
-              <div class="pub-body">
-                <div class="pub-venue">ECCV 2026</div>
-                <h3 class="pub-title">
-                  <a href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer">LinCa: Accelerating Diffusion Models via Learnable Decomposed Feature Caching</a>
-                </h3>
-                <p class="pub-authors">Jinshan Liu*, Haoran Qin*, Xiaobing Tu, Jiacheng Liu, <strong>Jiahui Hu</strong>, et al.</p>
-              </div>
-              <p class="pub-note">A learnable invertible decomposition splits cached features into components with different temporal continuity, giving each its own predictor. 5&ndash;7&times; acceleration on FLUX, Qwen-Image and HunyuanVideo with under 0.2% additional parameters.</p>
-              <div class="pub-links">
-                <a href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer">arXiv</a>
-                <a href="https://github.com/QHR69/LinCa" target="_blank" rel="noopener noreferrer">Code</a>
-              </div>
-            </li>
-            <li class="pub-item spring-hover">
-              <a class="pub-thumb" href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-                <img src="/static/images/pubs/glyphbanana.png" alt="Overview of the GlyphBanana workflow: extraction, draft preview, glyph injection, and style refinement" loading="lazy" width="2027" height="1353">
-              </a>
-              <div class="pub-body">
-                <div class="pub-venue">Preprint</div>
-                <h3 class="pub-title">
-                  <a href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer">GlyphBanana: Advancing Precise Text Rendering Through Agentic Workflows</a>
-                </h3>
-                <p class="pub-authors">Zexuan Yan, Jiarui Jin, Yue Ma, Shijian Wang, <strong>Jiahui Hu</strong>, Wenxiang Jiao, Yuan Lu, Linfeng Zhang</p>
-                <p class="pub-note">A training-free agentic workflow combines glyph templates with iterative style refinement to improve the rendering of complex text and mathematical formulas. Includes GlyphBanana-Bench for evaluating text and formula rendering.</p>
-                <div class="pub-links">
-                  <a href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer">arXiv</a>
-                  <a href="https://github.com/yuriYanZeXuan/GlyphBanana" target="_blank" rel="noopener noreferrer">Code</a>
+                <div class="pub-meta">
+                  <span class="pub-venue">Preprint</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2610.15324" target="_blank" rel="noopener noreferrer">[Paper]</a>
+                  </div>
                 </div>
               </div>
+              <time class="pub-date" datetime="2026-10">Oct. 2026</time>
+            </li>
+            <li class="pub-item">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="/static/images/pubs/linca.webp" alt="Overview of the LinCa framework: decompose, predict, reconstruct" loading="lazy" width="1200" height="562">
+              </a>
+              <div class="pub-body">
+                <h3 class="pub-title"><a href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer">LinCa: Accelerating Diffusion Models via Learnable Decomposed Feature Caching</a></h3>
+                <p class="pub-authors">Jinshan Liu*, Haoran Qin*, Xiaobing Tu, Jiacheng Liu, <strong>Jiahui Hu</strong>, et al.</p>
+                <div class="pub-meta">
+                  <span class="pub-venue">ECCV 2026</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2608.17973" target="_blank" rel="noopener noreferrer">[Paper]</a>
+                    <a href="https://github.com/QHR69/LinCa" target="_blank" rel="noopener noreferrer">[Code]</a>
+                  </div>
+                </div>
+              </div>
+              <time class="pub-date" datetime="2026-08">Aug. 2026</time>
+            </li>
+            <li class="pub-item">
+              <a class="pub-thumb" href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="/static/images/pubs/glyphbanana.png" alt="Overview of the GlyphBanana workflow: extraction, draft preview, glyph injection, and style refinement" loading="lazy" width="2027" height="1353">
+              </a>
+              <div class="pub-body">
+                <h3 class="pub-title"><a href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer">GlyphBanana: Advancing Precise Text Rendering Through Agentic Workflows</a></h3>
+                <p class="pub-authors">Zexuan Yan, Jiarui Jin, Yue Ma, Shijian Wang, <strong>Jiahui Hu</strong>, Wenxiang Jiao, Yuan Lu, Linfeng Zhang</p>
+                <div class="pub-meta">
+                  <span class="pub-venue">Preprint</span>
+                  <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2603.12155" target="_blank" rel="noopener noreferrer">[Paper]</a>
+                    <a href="https://github.com/yuriYanZeXuan/GlyphBanana" target="_blank" rel="noopener noreferrer">[Code]</a>
+                  </div>
+                </div>
+              </div>
+              <time class="pub-date" datetime="2026-03">Mar. 2026</time>
             </li>
           </ul>
         </section>
@@ -211,9 +212,6 @@ q2 -14 -8 -25q-9 -11 -24 -11h-192q-15 0 -24 11q-10 11 -8 25l58 433q-58 38 -58 10
           </div>
         </section>
 
-        <footer class="site-footer animate-in" style="--delay: 0.6s">
-          <p></p>
-        </footer>
 
       </main>
     </div>
