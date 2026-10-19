@@ -41,7 +41,7 @@
 .home-page #publications { grid-column: 1 / -1; }
 .home-page .section-title { font-family: var(--font-serif); font-size: 24px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; gap: 10px; margin-bottom: 12px; }
 .home-page .section-title::before { width: 2px; height: 22px; background: var(--accent); border-radius: 0; }
-.home-page .text-content p { font-size: 15px; line-height: 1.55; margin-bottom: 7px; text-wrap: pretty; }
+.home-page .text-content p { font-size: 16px; line-height: 1.55; margin-bottom: 7px; text-wrap: pretty; }
 .home-page .text-content p:last-child { margin-bottom: 0; }
 .home-page .text-content a { text-decoration-color: var(--accent); }
 .home-page .pub-list { gap: 18px; }
@@ -112,7 +112,7 @@
   .home-page .main-content { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .home-page #about, .home-page #publications { grid-column: 1; }
   .home-page .section-title { font-size: 23px; }
-  .home-page .text-content p { font-size: 14px; }
+  .home-page .text-content p { font-size: 15px; }
   .home-page .pub-list { gap: 22px; }
   .home-page .pub-item { grid-template-columns: 108px minmax(0, 1fr); gap: 6px 12px; }
   .home-page .pub-thumb { width: 108px; height: 82px; padding: 4px; }
