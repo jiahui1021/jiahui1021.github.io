@@ -27,15 +27,15 @@
 .home-page .status-badge { display: none; }
 .home-page .name { font-family: var(--font-serif); font-size: 29px; font-weight: 700; margin-bottom: 8px; }
 .home-page .name-cn { display: block; margin-top: 6px; font-family: "Songti SC", "STSong", "SimSun", serif; font-size: 18px; font-weight: 400; line-height: 1.4; letter-spacing: 0.12em; color: var(--text-secondary); }
-.home-page .bio { display: grid; gap: 12px; font-family: var(--font-serif); font-size: 15px; line-height: 1.4; margin: 14px 0 18px; letter-spacing: 0; }
+.home-page .bio { display: grid; gap: 12px; font-family: var(--font-serif); font-size: 16px; line-height: 1.45; margin: 14px 0 18px; letter-spacing: 0; }
 .home-page .profile-affiliation { display: grid; gap: 2px; }
 .home-page .profile-role { color: var(--text-primary); font-weight: 600; }
-.home-page .profile-institution { color: var(--text-secondary); font-size: 14px; }
+.home-page .profile-institution { color: var(--text-secondary); font-size: 15px; }
 .home-page .social-links { gap: 8px; margin-bottom: 12px; }
 .home-page .social-btn { width: 31px; height: 31px; border-radius: 6px; }
 .home-page .social-btn svg { width: 15px; height: 15px; }
-.home-page .contact-mini { font-family: var(--font-serif); font-size: 13px; margin-bottom: 18px; }
-.home-page .download-btn { padding: 7px 12px; font-family: var(--font-serif); font-size: 13px; font-weight: 600; border-radius: 6px; }
+.home-page .contact-mini { font-family: var(--font-serif); font-size: 14px; margin-bottom: 18px; overflow-wrap: anywhere; }
+.home-page .download-btn { padding: 7px 12px; font-family: var(--font-serif); font-size: 14px; font-weight: 600; border-radius: 6px; }
 .home-page .main-content { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 20px; }
 .home-page .content-card { margin: 0; }
 .home-page #about,
@@ -64,20 +64,16 @@
 .home-page .pub-links a { padding: 0; background: none; border: 0; border-radius: 0; color: var(--accent); font-family: inherit; font-size: inherit; font-weight: 500; letter-spacing: 0; }
 .home-page .pub-links a:hover { background: none; border: 0; color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 .home-page .pub-date { font-family: var(--font-serif); font-size: 13px; font-style: italic; line-height: 1.8; color: var(--text-secondary); white-space: nowrap; text-align: right; }
-.home-page #awards .section-title,
-.home-page #misc .section-title { font-size: 20px; margin-bottom: 9px; }
-.home-page #awards .section-title::before,
-.home-page #misc .section-title::before { height: 18px; }
 .home-page .awards-list { display: grid; gap: 7px; }
 .home-page .awards-list li { padding: 0; gap: 8px; align-items: baseline; margin: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
 .home-page .awards-list li:hover { transform: none; box-shadow: none; }
 .home-page .award-icon { display: none; }
-.home-page .award-details { display: block; font-size: 12px; line-height: 1.4; }
-.home-page .award-details strong { font-size: 13px; font-weight: 600; }
-.home-page .award-details .sub { display: inline; font-size: 12px; }
+.home-page .award-details { display: block; font-family: var(--font-serif); font-size: 15px; line-height: 1.5; }
+.home-page .award-details strong { font-size: inherit; font-weight: 600; }
+.home-page .award-details .sub { display: inline; font-size: 14px; }
 .home-page .award-details .sub::before { content: ' · '; }
 .home-page .hobbies-grid { gap: 7px 12px; }
-.home-page .hobby-tag { padding: 0; border: 0; border-radius: 0; background: none; font-size: 12px; font-weight: 500; line-height: 1.6; }
+.home-page .hobby-tag { padding: 0; border: 0; border-radius: 0; background: none; font-family: var(--font-serif); font-size: 15px; font-weight: 500; line-height: 1.6; }
 .home-page .hobby-tag:hover { background: none; color: inherit; box-shadow: none; transform: none; }
 .home-page .hobby-link { color: var(--accent); }
 .home-page .hobby-link:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
@@ -106,8 +102,8 @@
   .home-page .layout-wrapper { padding: 18px 18px 28px; }
   .home-page .profile-card { grid-template-columns: 72px minmax(0, 1fr); column-gap: 14px; }
   .home-page .avatar-container { width: 72px; height: 72px; grid-row: 1 / 3; align-self: start; }
-  .home-page .bio { grid-template-columns: minmax(0, 1fr); gap: 7px; font-size: 14px; }
-  .home-page .profile-institution { font-size: 13px; }
+  .home-page .bio { grid-template-columns: minmax(0, 1fr); gap: 7px; font-size: 15px; }
+  .home-page .profile-institution { font-size: 14px; }
   .home-page .social-links { grid-column: 1 / -1; grid-row: 3; }
   .home-page .contact-mini { grid-column: 1 / -1; grid-row: 4; margin-top: 5px; }
   .home-page .download-btn { grid-column: 2; grid-row: 3; justify-self: end; margin-top: 4px; }
